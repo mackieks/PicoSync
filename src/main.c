@@ -107,6 +107,7 @@ void RecordAndFixHSync(){
  * @brief Initializes GPIO pins used for CSync, HSync, and VSync signals.
  */
 void initializeGPIO(){
+
     //Initialise CSync/HSync input pin
     gpio_init(CSYNC_IN_PIN);
     gpio_set_dir(CSYNC_IN_PIN, GPIO_IN);
@@ -130,6 +131,14 @@ int main(void) {
     
     //Initialize GPIO
     initializeGPIO();
+
+    gpio_init(10);
+    gpio_set_dir(10, GPIO_IN);
+    sleep_ms(1000);
+    gpio_put(10, 0);
+    gpio_set_dir(10, GPIO_OUT);
+    sleep_ms(200);
+    gpio_set_dir(10, GPIO_IN);
 
     //Initialize PIOs
     initializeCSyncInjector(pio0);
