@@ -132,13 +132,13 @@ int main(void) {
     //Initialize GPIO
     initializeGPIO();
 
-    gpio_init(10);
-    gpio_set_dir(10, GPIO_IN);
+    gpio_init(3);
+    gpio_set_dir(3, GPIO_IN);
     sleep_ms(1000);
-    gpio_put(10, 0);
-    gpio_set_dir(10, GPIO_OUT);
+    gpio_put(3, 0);
+    gpio_set_dir(3, GPIO_OUT);
     sleep_ms(200);
-    gpio_set_dir(10, GPIO_IN);
+    gpio_set_dir(3, GPIO_IN);
 
     //Initialize PIOs
     initializeCSyncInjector(pio0);
